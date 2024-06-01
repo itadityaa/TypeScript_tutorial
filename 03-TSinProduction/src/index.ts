@@ -99,3 +99,6 @@ class YouTube implements TakePhoto {
 }
 
 // Abstract classes
+
+const instagram = new Instagram("Landscape", "B&W", true);
+instagram.takePhoto();
