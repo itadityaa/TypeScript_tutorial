@@ -30,13 +30,10 @@ function createUserBad({ name, isPaid }: { name: string; isPaid: boolean) {
   };
 } // Up to this point, everything is fine
 
-const userBad = createUserBad({ name: "Jane", isPaid: true }); // This will work
-const userBad1 = createUserBad({name: "Jane", isPaid: true, age: 25}); // This will not work because we have an extra property, and the TS is giving an error, which is a good thing.
+const userBad = createUserBad({ name: "Jane", isPaid: true }); 
+// This will work const userBad1 = createUserBad({name: "Jane", isPaid: true, age: 25}); This will not work because we have an extra property, and the TS is giving an error, which is a good thing.
 
 // The bad behaviour of Objects here is that there is a workaround to this problem. 
 
 let userBad2 = {name: "Jane", isPaid: true, age = 25};
 const userBad2_func_return = createUserBad(userBad2); // This will work, but it is completely wrong because we are passing an object with an extra property, and the TS is not giving an error. This is a bad behaviour of Objects in TS.
-
-
-export {};
